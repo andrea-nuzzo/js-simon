@@ -14,12 +14,10 @@ while(arrayNumber.length < 5){
     }
 }
 
-
 setTimeout(controlNumber, 10000);
     
 const boxNumber = document.querySelector(".boxNumber");
     boxNumber.innerText = arrayNumber;  
-
 
 // Funzione per il controllo dei numeri memorizzati
 function controlNumber(){
@@ -34,13 +32,18 @@ function controlNumber(){
         }
         i;
     }
+    console.log(numbRemembered.length);
 
-    if (numbRemembered.length < 5 ){
+    const boxTitle = document.querySelector(".boxTitle");
+
+    if (numbRemembered.length == 0 ){
+        boxTitle.innerText = "Non hai ricordato nessun numero!";
+        boxNumber.innerText = "Game Over";
+    }  else if (numbRemembered.length < 5 ){
         boxNumber.innerText = numbRemembered;
-        const boxTitle = document.querySelector(".boxTitle");
         boxTitle.innerText = "I numeri che hai ricordato sono";
-    }  else{
-        boxNumber.innerText = "Hai  vinto !";
+    } else{
+        boxNumber.innerText = "Hai vinto!";
     }
     
 }
